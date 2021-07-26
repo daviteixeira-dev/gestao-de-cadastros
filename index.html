@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Cadastros</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="carregarTotalEstoque('totalEstoque')">
+    <!--Carrinho de compras-->
+    <div class="carrinho">
+        <img src="img/carrinhoCompras.png">
+        <p>Itens no estoque: <span id="totalEstoque">0</span></p>
+    </div>
+    
+    <div class="clientes">
+        <img src="img/clientes.png">
+        <p>Clientes cadastrados: <span id="totalClientes">0</span></p>
+    </div>
+    <!--Formulário: Nome, código e quantidade de produtos-->
+    <form>
+        <table>
+            <caption>Cadastro de novos produtos</caption>
+            <!--Nome do produto-->
+            <tr>
+                <td class="alinharRotulos">Nome do produto:</td>
+                <td><input id="txtNomeProduto" type="text" placeholder="Digite o nome do produto"></td>
+            </tr>
+            <!--Código do produto-->
+            <tr>
+                <td class="alinharRotulos">Código do produto:</td>
+                <td><input id="txtCodProduto" type="text" placeholder="Exemplo: (#1234)"></td>
+            </tr>
+            <!--Quantidade do produto-->
+            <tr>
+                <td class="alinharRotulos">Quantidade do produto:</td>
+                <td>
+                    <select id="qtidadeProduto">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                    </select>
+                </td>
+            </tr>
+            <!--Botoes-->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Cadastrar" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','qtidadeProduto')">
+                    <input type="button" value="Ver estoque" class="alinhaBtns" onclick="window.open('verEstoque.html','_self')">
+                    <input type="reset" value="Limpar" class="alinhaBtns">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <form>
+        <table>
+            <caption>Cadastro de novos clientes</caption>
+            <!--Nome do produto-->
+            <tr>
+                <td class="alinharRotulos">Nome do cliente:</td>
+                <td><input id="txtNomeCliente" type="text" placeholder="Digite o nome do cliente"></td>
+            </tr>
+            <!--Código do produto-->
+            <tr>
+                <td class="alinharRotulos">Endereço:</td>
+                <td><input id="txtEnderecoCliente" type="text" placeholder="Digite o endereço do cliente"></td>
+            </tr>
+            <!--Quantidade do produto-->
+            <tr>
+                <td class="alinharRotulos">CPF:</td>
+                <td><input id="txtCPF" type="text" placeholder="Digite o CPF do cliente"></td>
+            </tr>
+            <!--Botoes-->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Cadastrar" class="alinhaBtns" onclick="validarProduto('txtNomeCliente','txtEnderecoCliente','txtCPF')">
+                    <input type="button" value="Ver clientes" class="alinhaBtns" onclick="window.open('verClientes.html','_self')">
+                    <input type="reset" value="Limpar" class="alinhaBtns">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script src="js/funcoes.js"></script>
+</body>
+
+</html>
